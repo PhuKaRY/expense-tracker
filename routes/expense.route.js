@@ -7,4 +7,6 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-route.post("/", (req, res) => {});
+route.post("/", (req, res, next) => {
+  res.render("/main");
+});
