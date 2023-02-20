@@ -19,3 +19,7 @@ tag: {
         ref: "User"}
 } 
 })
+
+const Expense = model("Expense", expenseSchema);
+
+module.exports = Expense;
