@@ -1,24 +1,20 @@
-const {Schema, model} = require('mongoose')
+const { Schema, model } = require("mongoose");
 
 const expenseSchema = new Schema({
-date: {
+  date: {
     type: Date,
-    required: true 
-},
-price: {
+    required: true,
+  },
+  price: {
     type: Number,
     required: true,
-},
-category: {type: String,
-    enum: ["Must have", "Nice to have", "Wasted"] 
-
-}
-tag: {
-    type: {mongoose.Schema.Types.ObjectId}, 
-    user: {type: mongoose.Schema.Types.ObjectId, 
-        ref: "User"}
-} 
-})
+  },
+  category: { type: String, enum: ["Must have", "Nice to have", "Wasted"] },
+  tag: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+});
 
 const Expense = model("Expense", expenseSchema);
 
