@@ -23,6 +23,9 @@ const projectName = "Expense Tracker";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
+// exposes currentUser on all routes
+app.use("/", require("./middleware/exposeCurrentUser"));
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
