@@ -1,8 +1,13 @@
 <h1>{{appTitle}} 🚀</h1>
-<p>Welcome to the best Expense Tracker!</p>
+
 <div>
+  <h2>Welcome to Ironhack Expense Tracker {{currentUser.username}}</h2>
   <ul>
-    <li><a href="/signup">Signup</a></li>
-    <li><a href="/login">Login</a></li>
+    {{#if currentUser}}
+      <li><a href="/logout">Logout</a></li>
+    {{else}}
+      <li><a href="/signup">SignUp</a></li>
+      <li><a href="/login">Login</a></li>
+    {{/if}}
   </ul>
 </div>
