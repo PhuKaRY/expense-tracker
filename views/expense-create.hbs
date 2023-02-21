@@ -1,1 +1,24 @@
 {{message}}
+
+<form action="/main/expense/create" method="post">
+  <label for="date">Date:</label>
+  <input type="date" name="date" />
+  <label for="tag">tag</label>
+  <select name="tag" >
+    <option selected disabled value="null">Please select a tag</option>
+    {{#each tags}}
+<option value="{{_id}}">{{name}}</option>
+
+    {{/each}}
+  </select>
+  <label for="price">price</label>
+  <input type="text" name="price" />
+  <label for="Category">category</label>
+ <select name="category"id="tag">
+     
+     <option value="Must have"> Must have</option>
+     <option value="Nice to have">Nice to have</option>
+     <option value="Wasted">Wasted</option>
+     </select>
+  <button "submit"> submit</button>
+</form>
