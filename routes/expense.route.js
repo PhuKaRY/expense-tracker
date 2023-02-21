@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Expense = require("../models/Expense.model");
+const { events } = require("../models/Tag.model");
 const Tag = require("../models/Tag.model");
 
 router.get("/expense/create", async (req, res, next) => {
@@ -52,6 +53,15 @@ router.post("/expense-edit/:id", async (req, res, next) => {
   try {
     const expenseUpdate = await Expense.findByIdAndUpdate(id, expenseNew);
     console.log(expenseUpdate);
+    res.redirect("/main");
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/expense-delete/:id", async (req, res, next) => {
+  try {
+    await Expense.findByIdAndDelete(req.params.id);
     res.redirect("/main");
   } catch (error) {
     next(error);
