@@ -11,8 +11,8 @@ const expenseSchema = new Schema({
   },
   category: { type: String, enum: ["Must have", "Nice to have", "Wasted"] },
   tag: {
-    type: mongoose.Schema.Types.ObjectId,
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    type: Schema.Types.ObjectId,
+    ref: "Tag",
   },
 });
 
