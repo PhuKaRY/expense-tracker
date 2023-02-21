@@ -31,7 +31,12 @@ router.get("/", async (req, res, next) => {
     const expenseUser = await Expense.find({
       user: req.session.currentUser._id,
     }).populate("tag");
-    res.render("expense", { expense: expenseUser });
+
+    const total = expenseUser.reduce((sum, current) => {
+      return sum + current.price || 0;
+    }, 0);
+
+    res.render("expense", { expense: expenseUser, total });
   } catch (error) {
     next(error);
   }

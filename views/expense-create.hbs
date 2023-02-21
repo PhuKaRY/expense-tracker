@@ -1,9 +1,11 @@
 {{message}}
-
 <form action="/main/expense/create" method="post">
+<div>
   <label for="date">Date:</label>
-  <input type="date" name="date" />
-  <label for="tag">tag</label>
+  <input type="date" name="date" value="2023-01-01" />
+  </div>
+  <div>
+  <label for="tag">Tag</label>
   <select name="tag" >
     <option selected disabled value="null">Please select a tag</option>
     {{#each tags}}
@@ -11,14 +13,21 @@
 
     {{/each}}
   </select>
-  <label for="price">price</label>
-  <input type="text" name="price" />
-  <label for="Category">category</label>
+  </div>
+  <div>
+  <label for="price">Price($)</label>
+  <input type="number" name="price" />
+  </div>
+  <div>
+  <label for="Category">Category</label>
  <select name="category"id="tag">
-     
+    <option selected disable value="null">Please select a category</option>
      <option value="Must have"> Must have</option>
      <option value="Nice to have">Nice to have</option>
      <option value="Wasted">Wasted</option>
      </select>
+     </div>
+     <div>
   <button "submit"> submit</button>
+  </div>
 </form>
