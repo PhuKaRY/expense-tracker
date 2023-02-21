@@ -17,6 +17,7 @@ router.post("/", async (req, res, next) => {
       price,
       category,
       tag,
+      user: req.session.currentUser._id,
     });
     res.redirect("/main/expense-create");
   } catch (error) {
@@ -24,8 +25,29 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.get("/expense-create", (req, res, next) => {
-  res.send("expense create");
+router.get("/expense-create", async (req, res, next) => {
+  try {
+    const expenseUser = await Expense.find({
+      user: req.session.currentUser._id,
+    }).populate("tag");
+    res.render("expense", { expense: expenseUser });
+  } catch (error) {
+    next(error);
+  }
+  // res
+  //   .status(200)
+  //   .render("expense-create", { message: "the data expense created" });
+});
+
+router.post("/expense-create/:id", async (req, res, next) => {
+  // try {
+  //   const { id } = req.params;
+  //   const newExpense = { ...req.body };
+  //   await Expense.findById(id);
+  //   res.json({ message: `successfully created expense:${id}` });
+  // } catch (error) {
+  //   next(error);
+  // }
 });
 
 module.exports = router;
