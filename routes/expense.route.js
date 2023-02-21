@@ -4,12 +4,12 @@ const router = express.Router();
 const Expense = require("../models/Expense.model");
 const Tag = require("../models/Tag.model");
 
-router.get("/", async (req, res, next) => {
+router.get("/expense/create", async (req, res, next) => {
   const tags = await Tag.find();
-  res.render("main", { tags });
+  res.render("expense-create", { tags });
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/expense/create", async (req, res, next) => {
   const { date, price, category, tag } = req.body;
   try {
     await Expense.create({
@@ -19,13 +19,13 @@ router.post("/", async (req, res, next) => {
       tag,
       user: req.session.currentUser._id,
     });
-    res.redirect("/main/expense-create");
+    res.redirect("/main");
   } catch (error) {
     next(error);
   }
 });
 
-router.get("/expense-create", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     const expenseUser = await Expense.find({
       user: req.session.currentUser._id,
@@ -34,20 +34,28 @@ router.get("/expense-create", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-  // res
-  //   .status(200)
-  //   .render("expense-create", { message: "the data expense created" });
 });
 
-router.post("/expense-create/:id", async (req, res, next) => {
-  // try {
-  //   const { id } = req.params;
-  //   const newExpense = { ...req.body };
-  //   await Expense.findById(id);
-  //   res.json({ message: `successfully created expense:${id}` });
-  // } catch (error) {
-  //   next(error);
-  // }
+router.get("/expense-edit/:id", async (req, res, next) => {
+  try {
+    const tags = await Tag.find();
+    const expenseEdit = await Expense.findById(req.params.id).populate("tag");
+    res.render("expense-edit", { expenseEdit, tags });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/expense-edit/:id", async (req, res, next) => {
+  const { id } = req.params;
+  const expenseNew = { ...req.body };
+  try {
+    const expenseUpdate = await Expense.findByIdAndUpdate(id, expenseNew);
+    console.log(expenseUpdate);
+    res.redirect("/main");
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;
