@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <ul>
+      {{#if currentUser}}
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/main/expense/create">Add expense</a></li>
+        <li><a href="/main">Expenses</a></li>
+
+      {{else}}
+        <li><a href="/signup">SignUp</a></li>
+        <li><a href="/login">Login</a></li>
+      {{/if}}
+    </ul>
 
     {{{body}}}
 

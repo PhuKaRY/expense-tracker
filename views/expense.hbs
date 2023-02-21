@@ -18,8 +18,19 @@
         <td>
           <a href="/main/expense-edit/{{_id}}">edit</a>
         </td>
-        <td><a href="/main/expense/create">create</a></td>
+        <td>
+          <button class="delete-btn">delete</button>
+          <form
+            class="hidden"
+            action="/main/expense-delete/{{_id}}"
+            method="post"
+          >
+            <button type="submit">confirm</button>
+            <button type="button" class="cancel-btn">cancel</button>
+          </form>
+        </td>
       </tr>
+
     {{/each}}
     <td>
       Total expenses
