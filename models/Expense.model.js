@@ -9,6 +9,7 @@ const expenseSchema = new Schema({
     type: Number,
     required: true,
   },
+  user: { type: Schema.Types.ObjectId, ref: "User" },
   category: { type: String, enum: ["Must have", "Nice to have", "Wasted"] },
   tag: {
     type: Schema.Types.ObjectId,
