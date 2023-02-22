@@ -76,4 +76,42 @@ router.post("/expense-delete/:id", isOwnerOfExpense, async (req, res, next) => {
   }
 });
 
+router.get("/filter", async (req, res, next) => {
+  try {
+    res.render("filter", { title: "Check By Filter" });
+  } catch (error) {
+    next(error);
+  }
+});
+
+// filter for the tags
+
+router.post("/expense", async (req, res, next) => {
+  try {
+    // console.log(req.body);
+    const tagSelected = await Tag.findOne({ name: req.body.tag });
+    // console.log(tag);
+    const allExpense = await Expense.find({
+      $and: [
+        {
+          user: req.session.currentUser._id,
+        },
+        {
+          tag: tagSelected._id,
+        },
+      ],
+    }).populate("tag");
+    // console.log(allExpense);
+    res.status(200).json(allExpense);
+  } catch (error) {
+    next(error);
+  }
+});
+// router.get("/filter/tag", async (req, res, next) => {
+//   try {
+//     res.render("tag", { title: "Party" });
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 module.exports = router;

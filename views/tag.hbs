@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <td>Date</td>
+      <td>Price</td>
+      <td>Tag</td>
+      <td>Category</td>
+    </tr>
+  </thead>
+  <tbody>
+    <template>
+
+      {{#each expense}}
+        <tr>
+          <td>{{date}}</td>
+          <td>{{price}}</td>
+          <td>{{tag.name}}</td>
+          <td>{{category}}</td>
+          <td>
+            <a href="/main/filter/tag{{_id}}">tag</a>
+          </td>
+        </tr>
+      {{/each}}
+    </template>
+
+    {{! <td>Total expenses</td> }}
+    <td>{{total}}</td>
+  </tbody>
+</table>
