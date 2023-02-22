@@ -37,6 +37,8 @@ app.use("/", authRoutes);
 const mainRoute = require("./routes/expense.route");
 app.use("/main", mainRoute);
 
+const profileRoute = require("./routes/profile.route");
+app.use("/profile", profileRoute);
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
