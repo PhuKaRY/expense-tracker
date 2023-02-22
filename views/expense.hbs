@@ -1,4 +1,4 @@
-<h1>hey {{currentUser.username}}! this is what you have spent</h1>
+<h1>Hey {{currentUser.username}}! this is what you have spent</h1>
 <table>
   <thead>
     <tr>
@@ -16,17 +16,20 @@
         <td>{{tag.name}}</td>
         <td>{{category}}</td>
         <td>
-          <a href="/main/expense-edit/{{_id}}">edit</a>
+          <a href="/main/expense-edit/{{_id}}" class="pencil"><i
+              class="fas fa-edit"
+              aria-hidden="true"
+            ></i></a>
         </td>
         <td>
-          <button class="delete-btn">delete</button>
+          <button class="btn-delete"><i class="fas fa-eraser"></i></button>
           <form
             class="hidden"
             action="/main/expense-delete/{{_id}}"
             method="post"
           >
-            <button type="submit">confirm</button>
-            <button type="button" class="cancel-btn">cancel</button>
+            <button type="submit btn-delete">confirm</button>
+            <button type="button" class="cancel-btn btn-delete">cancel</button>
           </form>
         </td>
       </tr>

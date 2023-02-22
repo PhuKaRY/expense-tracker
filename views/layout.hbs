@@ -5,23 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{appTitle}}</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
   <body>
-    <ul>
-      {{#if currentUser}}
-        <li><a href="/logout">Logout</a></li>
-        <li><a href="/main/expense/create">Add expense</a></li>
-        <li><a href="/main">Expenses</a></li>
-        <li><a href="/profile">Profile</a></li>
+    <section>
+      <nav>
+        <div class="navigation">
+          <ul>
+            {{#if currentUser}}
+              <li><a href="/profile">Profile</a></li>
+              <li><a href="/main/expense/create">Create expense</a></li>
+              <li><a href="/main">All expenses</a></li>
+              <li><a href="/logout">Logout</a></li>
 
-      {{else}}
-        <li><a href="/signup">SignUp</a></li>
-        <li><a href="/login">Login</a></li>
-      {{/if}}
-    </ul>
-
+            {{else}}
+              <li><a href="/signup">SignUp</a></li>
+              <li><a href="/login">Login</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </nav>
+    </section>
     {{{body}}}
 
     <script src="/js/script.js"></script>
