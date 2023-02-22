@@ -4,6 +4,7 @@ const router = express.Router();
 const Expense = require("../models/Expense.model");
 const { events } = require("../models/Tag.model");
 const Tag = require("../models/Tag.model");
+const isOwnerOfExpense = require("./../middleware/isOwnerOfExpense");
 
 router.get("/expense/create", async (req, res, next) => {
   const tags = await Tag.find();
@@ -42,7 +43,9 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/expense-edit/:id", async (req, res, next) => {
+// router.use(isOwnerOfExpense);
+
+router.get("/expense-edit/:id", isOwnerOfExpense, async (req, res, next) => {
   try {
     const tags = await Tag.find();
     const expenseEdit = await Expense.findById(req.params.id).populate("tag");
@@ -52,7 +55,7 @@ router.get("/expense-edit/:id", async (req, res, next) => {
   }
 });
 
-router.post("/expense-edit/:id", async (req, res, next) => {
+router.post("/expense-edit/:id", isOwnerOfExpense, async (req, res, next) => {
   const { id } = req.params;
   const expenseNew = { ...req.body };
   try {
@@ -64,7 +67,7 @@ router.post("/expense-edit/:id", async (req, res, next) => {
   }
 });
 
-router.post("/expense-delete/:id", async (req, res, next) => {
+router.post("/expense-delete/:id", isOwnerOfExpense, async (req, res, next) => {
   try {
     await Expense.findByIdAndDelete(req.params.id);
     res.redirect("/main");
