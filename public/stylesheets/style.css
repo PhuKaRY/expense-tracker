@@ -14,11 +14,13 @@ body {
 }
 
 nav {
-  /* margin: 1rem; */
   padding: 1rem;
-  /* border: 1px solid red; */
   background-color: black;
   width: 100%;
+}
+
+nav.navTrans{
+  background-color: transparent;
 }
 
 ul {
@@ -26,7 +28,6 @@ ul {
   justify-content: space-between;
   width: 100%;
   list-style: none;
-  /* background-color: black; */
 }
 
 a {
@@ -36,11 +37,17 @@ a {
   text-decoration: none;
 }
 
+
 a:hover {
   opacity: 0.6;
   transition: 0.3s;
 }
-
+h1.homeH1{
+  border:1px solid red;
+  display: flex;
+  text-align: start;
+  justify-content: flex-start;
+}
 .navigation ul li a {
   display: block;
   align-items: center;
@@ -48,7 +55,58 @@ a:hover {
   font-size: 1.25rem;
 }
 
+
+.navigation #sign-home{
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  width: 10rem;
+  height: 3rem;
+  margin: 1rem;
+  background-color: honeydew;
+  border-radius: 1rem;
+  font-weight: 800;
+}
+
+.navigation #sign-home:active {
+box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.navigation #log-home{
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 3rem;
+  margin: 1rem;
+  background-color: burlywood;
+  border-radius: 1rem;
+  font-weight: 800;
+}
+
+.navigation #log-home:active {
+box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#home{
+  background-image: url("./../images/piece-monnaie-table-bois.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+section {
+  width: 100%;
+}
+
 h1 {
+  display: flex;
+  text-align: center;
   font-size: 3rem;
   font-family: "Montserrat", sans-serif;
   margin: 0.5rem;
@@ -58,7 +116,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Courier New", Courier, monospace;
   color: darkblue;
   display: flex;
@@ -72,7 +130,7 @@ h2 {
 .home {
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 4rem;
   padding: 4rem;
   font-size: 2rem;
@@ -80,7 +138,7 @@ h2 {
 
 form {
   font-family: "Courier New", Courier, monospace, sans-serif;
-  /* border: 1px solid red; */
+  /* border: 1px solid red;  */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -91,7 +149,7 @@ form {
   max-width: 450px;
   margin: 2rem auto;
   padding: 1em;
-}
+} 
 
 label {
   display: flex;
@@ -139,6 +197,12 @@ button:active {
   transform: translateY(4px);
 }
 
+#form form{
+  border: 1px solid red;
+  background-color: pink;
+  background-image: url("./../images/blob-haikei.png");
+}
+
 #form h2 {
   display: flex;
   justify-content: center;
@@ -148,9 +212,124 @@ button:active {
   width: 100%;
 }
 
+#form .btn-signup{
+  background-color: #00b7ff;
+  width: 50%;
+}
+
+#login-form .login{
+width: 50%;
+}
+
+#login-form form{
+  background-image: url("./../images/low-poly-grid-haikei.png");
+}
+
+#form input{
+  width: 75%;
+  height: 2.5rem;
+}
+
+#login-form input{
+width: 75%;
+  height: 2.5rem;
+}
+
+#form p {
+  margin: 0.5rem;
+  font-weight: 800;
+}
+
+#form a {
+  font-weight: 800;
+}
 /* .create-form form{
   border: 1px solid red;
 } */
+
+#userForm form{
+background-image: url("./../images/low-poly-grid-haikei.png");
+}
+
+#userForm .save{
+border: 1px solid red;
+width: 75%;
+margin: 2rem auto;
+}
+
+#userForm label {
+  color:aliceblue;
+}
+
+#userForm input{
+  width: 75%;
+  height: 2.5rem;
+}
+
+#edit form{
+  border: 1px solid red;
+  margin: 3rem auto;
+  background-image: url("./../images/layered-steps-haikei.png");
+}
+
+#edit label{
+  width: 50%;
+  color: beige;
+}
+
+#edit input{
+  width: 60%;
+  height: 2.5rem;
+}
+
+
+#edit .button{
+/* background-color: #00b7ff; */
+display: flex;
+/* text-align: center; */
+justify-content: center;
+align-content: center;
+width: 50%;
+font-weight: 800;
+margin: 1rem auto;
+padding: 1rem;
+}
+
+#edit select{
+  border: 1px solid red;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 800;
+}
+
+#edit h2{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace, sans-serif;
+  width: 75%;
+  /* border: 1px solid red; */
+  margin: 0 auto;
+}
+
+#create-form form{
+  border: 1px solid red;
+  margin: 3rem auto;
+  color:aliceblue;
+  background-image: url("./../images/low-poly-grid-haikei(2).png");
+  /* background-image: url("./../images/layered-steps-haikei.png"); */
+}
+
+#create-form select{
+  border: 1px solid red;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
 
 .hidden {
   display: none;

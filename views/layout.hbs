@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{appTitle}}</title>
     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link
       href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
       rel="stylesheet"
     />
@@ -13,6 +17,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
@@ -22,26 +27,26 @@
 
   </head>
 
-  <body>
+  <body id="home">
     <section>
-      <nav>
+      <nav {{#if isHome}} class="navTrans" {{/if}}>
         <div class="navigation">
           <ul>
             {{#if currentUser}}
-
-              <li><a href="/logout">Logout</a></li>
-              <li><a href="/main/expense/create">Add expense</a></li>
-              <li><a href="/main">Expenses</a></li>
-              <li><a href="/profile">Profile</a></li>
+            <li><a href="/"><i class="fas fa-home"></i></a></li>
+              <li><a href="/main/expense/create"><i class="fas fa-plus-circle"></i></a></li>
+              <li><a href="/main"><i class="fas fa-table"></i></a></li>
               <li>
                 <a href="/main/filter">
                   Hi
                   {{currentUser.username}}! Click here to check by Tag ?
                 </a>
               </li>
+              <li><a href="/profile"><i class="fas fa-user-circle"></i></a></li>
+              <li><a href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
             {{else}}
-              <li><a href="/signup">SignUp</a></li>
-              <li><a href="/login">Login</a></li>
+              <li id="sign-home"><a href="/signup">SignUp</a></li>
+              <li id="log-home"><a href="/login">Login</a></li>
             {{/if}}
           </ul>
         </div>

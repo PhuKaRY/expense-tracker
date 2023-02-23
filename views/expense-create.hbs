@@ -1,14 +1,14 @@
 {{message}}
-<h2>Create Expense</h2>
-<div class="create-form"> 
+<h2 class="animate__animated animate__backInDown">Create Expense</h2>
+<div id="create-form"> 
 <form action="/main/expense/create" method="post">
 <div>
   <label for="date">Date:</label>
-  <input type="date" name="date" value="2023-01-01" />
+  <input class="animate__animated animate__lightSpeedInRight" type="date" name="date" value="2023-01-01" />
   </div>
   <div>
   <label for="tag">Tag</label>
-  <select name="tag" >
+  <select class="animate__animated animate__lightSpeedInLeft" name="tag" >
     <option selected disabled value="null">Please select a tag</option>
     {{#each tags}}
 <option value="{{_id}}">{{name}}</option>
@@ -17,12 +17,12 @@
   </select>
   </div>
   <div>
-  <label for="price">Price $:</label>
-  <input type="number" name="price" />
+  <label for="price">Price$:</label>
+  <input class="animate__animated animate__lightSpeedInRight" type="number" name="price" />
   </div>
   <div>
   <label for="Category">Category</label>
- <select name="category"id="tag">
+ <select class="animate__animated animate__lightSpeedInLeft" name="category"id="tag">
     <option selected disable value="null">Please select a category</option>
      <option value="Must have"> Must have</option>
      <option value="Nice to have">Nice to have</option>
