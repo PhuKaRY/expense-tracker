@@ -36,6 +36,7 @@ a {
   text-decoration: none;
 }
 
+
 a:hover {
   opacity: 0.6;
   transition: 0.3s;
@@ -46,6 +47,43 @@ a:hover {
   align-items: center;
   text-align: center;
   font-size: 1.25rem;
+}
+
+.navigation #sign-home{
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  width: 10rem;
+  height: 3rem;
+  margin: 1rem;
+  background-color: honeydew;
+  border-radius: 1rem;
+  font-weight: 800;
+}
+
+.navigation #sign-home:active {
+box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.navigation #log-home{
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 3rem;
+  margin: 1rem;
+  background-color: burlywood;
+  border-radius: 1rem;
+  font-weight: 800;
+}
+
+.navigation #log-home:active {
+box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 section {
@@ -85,7 +123,7 @@ h2 {
 
 form {
   font-family: "Courier New", Courier, monospace, sans-serif;
-  /* border: 1px solid red; */
+  /* border: 1px solid red;  */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -96,7 +134,7 @@ form {
   max-width: 450px;
   margin: 2rem auto;
   padding: 1em;
-}
+} 
 
 label {
   display: flex;
@@ -144,6 +182,12 @@ button:active {
   transform: translateY(4px);
 }
 
+#form form{
+  border: 1px solid red;
+  background-color: pink;
+  background-image: url("./../images/blob-haikei.png");
+}
+
 #form h2 {
   display: flex;
   justify-content: center;
@@ -153,6 +197,37 @@ button:active {
   width: 100%;
 }
 
+#form .btn-signup{
+  background-color: #00b7ff;
+  width: 50%;
+}
+
+#login-form .login{
+width: 50%;
+}
+
+#login-form form{
+  background-image: url("./../images/low-poly-grid-haikei.png");
+}
+
+#form input{
+  width: 75%;
+  height: 2.5rem;
+}
+
+#login-form input{
+width: 75%;
+  height: 2.5rem;
+}
+
+#form p {
+  margin: 0.5rem;
+  font-weight: 800;
+}
+
+#form a {
+  font-weight: 800;
+}
 /* .create-form form{
   border: 1px solid red;
 } */

@@ -24,20 +24,20 @@
         <div class="navigation">
           <ul>
             {{#if currentUser}}
-
-              <li><a href="/logout">Logout</a></li>
-              <li><a href="/main/expense/create">Add expense</a></li>
-              <li><a href="/main">Expenses</a></li>
-              <li><a href="/profile">Profile</a></li>
+            <li><a href="/"><i class="fas fa-home"></i></a></li>
+              <li><a href="/main/expense/create"><i class="fas fa-plus-circle"></i></a></li>
+              <li><a href="/main"><i class="fas fa-table"></i></a></li>
               <li>
                 <a href="/main/filter">
                   Hi
                   {{currentUser.username}}! Click here to check by Tag ?
                 </a>
               </li>
+              <li><a href="/profile"><i class="fas fa-user-circle"></i></a></li>
+              <li><a href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
             {{else}}
-              <li><a href="/signup">SignUp</a></li>
-              <li><a href="/login">Login</a></li>
+              <li id="sign-home"><a href="/signup">SignUp</a></li>
+              <li id="log-home"><a href="/login">Login</a></li>
             {{/if}}
           </ul>
         </div>
