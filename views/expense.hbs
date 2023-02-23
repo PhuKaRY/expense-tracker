@@ -1,5 +1,6 @@
-<h1>Hey {{currentUser.username}}! this is what you have spent</h1>
-<table class="expense-table">
+<h1 class="animate__animated animate__bounce">Hey
+  {{currentUser.username}}! this is what you have spent</h1>
+<table class="expense-table animate__animated animate__backInLeft">
   <thead>
     <tr>
       <td>Date</td>
@@ -11,7 +12,10 @@
   <tbody>
     {{#each expense}}
       <tr>
-        <td>{{date}}</td>
+        <td class="animate__animated animate__lightSpeedInRight">{{dateFormat
+            date
+            "dddd, MMMM Do YYYY"
+          }}</td>
         <td>{{price}}</td>
         <td>{{tag.name}}</td>
         <td>{{category}}</td>
@@ -36,7 +40,7 @@
 
     {{/each}}
     <td>
-      Total expenses
+      Total expenses :
     </td>
     <td>
       {{total}}

@@ -20,7 +20,7 @@ cancelBtns?.forEach((btn) => {
     const parentTD = btn.closest("td");
 
     parentTD.querySelector("form").classList.add("hidden");
-    parentTD.querySelector(".delete-btn").classList.remove("hidden");
+    parentTD.querySelector(".btn-delete").classList.remove("hidden");
   });
 });
 
@@ -43,7 +43,9 @@ document.querySelector("#tag")?.addEventListener("click", async (event) => {
       .content.cloneNode(true);
     document.querySelector("tbody").append(clone);
     document.querySelector("#tr").setAttribute("id", index);
-    document.querySelector("#date").textContent = el.date;
+    document.querySelector("#date").textContent = new Date(
+      el.date
+    ).toLocaleDateString();
     document.querySelector("#date").setAttribute("id", el.date);
     document.querySelector("#price").textContent = el.price;
     document.querySelector("#price").setAttribute("id", el.price);

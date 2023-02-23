@@ -12,7 +12,8 @@
 
       {{#each expense}}
         <tr>
-          <td>{{date}}</td>
+
+          <td>{{dateFormat date "dddd, MMMM Do YYYY"}}</td>
           <td>{{price}}</td>
           <td>{{tag.name}}</td>
           <td>{{category}}</td>
