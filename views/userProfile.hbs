@@ -1,5 +1,5 @@
-<div id="form">
-  <h2>Profile</h2>
+<div id="userform">
+  <h2 class="animate__animated animate__flash">Profile</h2>
   <form action="/profile" method="POST" class="userProfile">
 
     <label for="username">
@@ -19,7 +19,7 @@
       Password</label>
     <input type="password" name="password" placeholder="Your password" />
 
-    <button>Save</button>
+    <button class="save" type="submit">Save</button>
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
