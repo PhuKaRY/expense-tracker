@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
@@ -19,11 +20,17 @@
         <div class="navigation">
           <ul>
             {{#if currentUser}}
-              <li><a href="/profile">Profile</a></li>
-              <li><a href="/main/expense/create">Create expense</a></li>
-              <li><a href="/main">All expenses</a></li>
-              <li><a href="/logout">Logout</a></li>
 
+              <li><a href="/logout">Logout</a></li>
+              <li><a href="/main/expense/create">Add expense</a></li>
+              <li><a href="/main">Expenses</a></li>
+              <li><a href="/profile">Profile</a></li>
+              <li>
+                <a href="/main/filter">
+                  Hi
+                  {{currentUser.username}}! Click here to check by Tag ?
+                </a>
+              </li>
             {{else}}
               <li><a href="/signup">SignUp</a></li>
               <li><a href="/login">Login</a></li>
