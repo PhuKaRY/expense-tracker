@@ -37,7 +37,11 @@ router.get("/", async (req, res, next) => {
       return sum + current.price || 0;
     }, 0);
 
-    res.render("expense", { expense: expenseUser, total });
+    res.render("expense", {
+      expense: expenseUser,
+      total,
+      stylesheet: ["table"],
+    });
   } catch (error) {
     next(error);
   }
@@ -78,7 +82,7 @@ router.post("/expense-delete/:id", isOwnerOfExpense, async (req, res, next) => {
 
 router.get("/filter", async (req, res, next) => {
   try {
-    res.render("filter", { title: "Check By Filter" });
+    res.render("filter", { title: "Check By Filter", stylesheet: ["table"] });
   } catch (error) {
     next(error);
   }

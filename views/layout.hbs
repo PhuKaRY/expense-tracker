@@ -12,6 +12,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    {{#each stylesheet}}
+      <link rel="stylesheet" href="/stylesheets/{{this}}.css" />
+    {{/each}}
+
   </head>
 
   <body>
