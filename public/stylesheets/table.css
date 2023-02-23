@@ -1,5 +1,32 @@
-table {
-  border: 1px solid black;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.btn-delete {
+  width: 45px;
+}
+
+.expense-table {
+  /* border: 1px solid black; */
+  margin-left: 18rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8842130602240896) 0%,
+    rgba(16, 62, 71, 1) 0%,
+    rgba(185, 200, 204, 1) 0%,
+    rgba(106, 169, 182, 1) 0%,
+    rgba(8, 130, 155, 1) 100%,
+    rgba(15, 71, 82, 1) 100%,
+    rgba(16, 58, 66, 1) 100%,
+    rgba(18, 63, 71, 1) 100%,
+    rgba(45, 127, 144, 1) 100%,
+    rgba(21, 71, 81, 1) 100%,
+    rgba(56, 153, 173, 1) 100%,
+    rgba(230, 237, 239, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 thead {
@@ -7,9 +34,8 @@ thead {
 }
 
 td {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   font-family: "Montserrat", sans-serif;
-  /* box */
 }
 
 .pencil {
@@ -17,6 +43,81 @@ td {
   margin: 1rem;
 }
 
-td button .delete-button {
+/* td button .delete-button {
   border: 1px solid red;
+} */
+form {
+  color: black;
+  font-size: 5px;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 22%
+  );
+}
+
+.filter-table {
+  border: 1px solid black;
+  margin-left: 32rem;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8842130602240896) 0%,
+    rgba(16, 58, 66, 1) 0%,
+    rgba(16, 62, 71, 1) 0%,
+    rgba(185, 200, 204, 1) 0%,
+    rgba(230, 237, 239, 1) 100%,
+    rgba(8, 130, 155, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+/* .total {
+  border: 1px solid black;
+  margin-left: 32rem;
+} */
+body {
+  background-image: url("./../images/filter.png");
+}
+h1 {
+  color: bisque;
+  margin-left: 17rem;
+  margin-top: 4rem;
+}
+.pencil {
+  color: bisque;
+}
+
+tfoot.total {
+  color: beige;
+  background-color: rgb(112, 52, 52);
+}
+#tag {
+  width: 37%;
+  background-color: beige;
+}
+.expense-table {
+  width: 65%;
+  height: 60%;
+  margin-top: 2rem;
+  /* margin-right: 18rem; */
+}
+.filter-table {
+  width: 29%;
+  height: 50%;
+}
+.m {
+  color: rgb(159, 96, 20);
+}
+.o {
+  color: rgb(159, 96, 20);
+}
+.n {
+  color: rgb(159, 96, 20);
+}
+.e {
+  color: rgb(159, 96, 20);
 }
