@@ -1,10 +1,15 @@
 <div id="form">
   <h2>Profile</h2>
-  <form action="" method="POST" class="userProfile">
+  <form action="/profile" method="POST" class="userProfile">
 
     <label for="username">
       Username</label>
-    <input type="text" name="username" placeholder="Your username" />
+    <input
+      type="text"
+      name="username"
+      placeholder="Your username"
+      value={{userFound.username}}
+    />
 
     <label for="email">
       Email</label>
@@ -14,7 +19,7 @@
       Password</label>
     <input type="password" name="password" placeholder="Your password" />
 
-    <button type="submit">Save Changes</button>
+    <button>Save</button>
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
