@@ -3,18 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("old JS imported successfully!");
 });
 
-const deleteBtns = document.querySelectorAll(".delete-btn");
+const deleteBtns = document.querySelectorAll(".btn-delete");
 const cancelBtns = document.querySelectorAll(".cancel-btn");
 
-deleteBtns.forEach((btn) => {
+deleteBtns?.forEach((btn) => {
   btn.addEventListener("click", (event) => {
+    console.log("click");
     const parentTD = btn.closest("td");
     parentTD.querySelector("form").classList.remove("hidden");
     btn.classList.add("hidden");
   });
 });
 
-cancelBtns.forEach((btn) => {
+cancelBtns?.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     const parentTD = btn.closest("td");
 
@@ -23,7 +24,7 @@ cancelBtns.forEach((btn) => {
   });
 });
 
-document.querySelector("#tag").addEventListener("click", async (event) => {
+document.querySelector("#tag")?.addEventListener("click", async (event) => {
   const tag = document.querySelector("#tag").value;
   document.querySelector("tbody").innerHTML = "";
   // console.log(http://127.0.0.1:3000);
