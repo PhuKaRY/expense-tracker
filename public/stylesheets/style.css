@@ -48,11 +48,6 @@ a:hover {
   font-size: 1.25rem;
 }
 
-section {
-  border: 1px solid red;
-  width: 100%;
-}
-
 h1 {
   font-size: 3rem;
   font-family: "Montserrat", sans-serif;

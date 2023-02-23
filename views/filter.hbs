@@ -1,7 +1,9 @@
 {{!-- <h1> hi{{currentUser.username}}! want to Check by Tag ?</h1> --}}
 
 <form>
-  <label for="tag">Tag:</label>
+
+  <label for="tag">Make your choice<i class="fas fa-hand-point-down"></i>
+  </label>
   <select name="tag" id="tag">
     <option value="house">House</option>
     <option value="party">Party</option>
@@ -11,7 +13,8 @@
   </select>
 </form>
 
-<table>
+<table class="filter-table">
+
   <thead>
     <tr>
       <th>Date</th>
@@ -21,7 +24,14 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
 
+      <td>td</td>
+      <td>td</td>
+      <td>td</td>
+      <td>td</td>
+
+    </tr>
   </tbody>
 </table>
 <template id="my-template">
@@ -40,7 +50,8 @@
   {{!-- {{<td>Total expenses</td> }}
     <td>{{total}}</td> --}}
 </template>
-<tfoot>
+
+<tfoot class="total">
   <tr>
     <th>Total: <span id="totalPrice"></span><span>$</span></th>
   </tr>
