@@ -8,10 +8,11 @@ const isOwnerOfExpense = require("./../middleware/isOwnerOfExpense");
 
 router.get("/expense/create", async (req, res, next) => {
   const tags = await Tag.find();
+  console.log("tags:", tags);
   res.render("expense-create", { tags });
 });
 
-router.post("/expense/create", isOwnerOfExpense, async (req, res, next) => {
+router.post("/expense/create", async (req, res, next) => {
   const { date, price, category, tag } = req.body;
   try {
     await Expense.create({
