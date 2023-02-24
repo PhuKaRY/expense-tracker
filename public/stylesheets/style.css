@@ -37,13 +37,15 @@ a {
   text-decoration: none;
 }
 
+i{
+  font-size: 2rem;
+}
 
 a:hover {
   opacity: 0.6;
   transition: 0.3s;
 }
 h1.homeH1{
-  border:1px solid red;
   display: flex;
   text-align: start;
   justify-content: flex-start;
@@ -122,23 +124,47 @@ h2 {
   display: flex;
   justify-content: center;
   width: 50%;
-  /* width: 10rem; */
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
+  gap: 2rem;
+
 }
 
-.home {
+.img-wallet img{ 
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
-  margin: 4rem;
-  padding: 4rem;
-  font-size: 2rem;
+  margin: 0 auto;
 }
+
+ h2.home {
+  display: flex;
+  justify-content: center;
+  margin: 6rem;
+  padding: 6rem;
+  font-size: 2rem;
+  border: 1px solid red;
+}
+
+.button-h h2{
+display: flex;
+justify-content: center;
+text-align: center;
+margin: 3rem auto;
+padding: 3rem;
+background-color: beige;
+border-radius: 1rem;
+}
+
+/* h2.wel {
+  display: flex;
+  border: 1px solid red;
+  margin: 1.5rem auto;
+  padding: 2rem;
+
+} */
 
 form {
   font-family: "Courier New", Courier, monospace, sans-serif;
-  /* border: 1px solid red;  */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -198,7 +224,7 @@ button:active {
 }
 
 #form form{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: pink;
   background-image: url("./../images/blob-haikei.png");
 }
@@ -243,16 +269,12 @@ width: 75%;
 #form a {
   font-weight: 800;
 }
-/* .create-form form{
-  border: 1px solid red;
-} */
 
 #userForm form{
 background-image: url("./../images/low-poly-grid-haikei.png");
 }
 
 #userForm .save{
-border: 1px solid red;
 width: 75%;
 margin: 2rem auto;
 }
@@ -267,7 +289,6 @@ margin: 2rem auto;
 }
 
 #edit form{
-  border: 1px solid red;
   margin: 3rem auto;
   background-image: url("./../images/layered-steps-haikei.png");
 }
@@ -296,7 +317,6 @@ padding: 1rem;
 }
 
 #edit select{
-  border: 1px solid red;
   width: 60%;
   margin: 1rem auto;
   padding: 0.5rem;
@@ -315,7 +335,6 @@ padding: 1rem;
 }
 
 #create-form form{
-  border: 1px solid red;
   margin: 3rem auto;
   color:aliceblue;
   background-image: url("./../images/low-poly-grid-haikei(2).png");
@@ -323,7 +342,6 @@ padding: 1rem;
 }
 
 #create-form select{
-  border: 1px solid red;
   width: 100%;
   margin: 1rem auto;
   padding: 0.5rem;
