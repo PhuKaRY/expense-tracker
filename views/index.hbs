@@ -1,8 +1,17 @@
 
+<div class="img-wallet" >
+  <img class="animate__animated animate__rubberBand" src="./../images/money-loss.png" alt="" width="200" height="200">
+</div>
 <div class="home">
-   <h1 id="homeH1">{{appTitle}}</h1>
-  <h2>Welcome to your Expense Tracker {{currentUser.username}}</h2>
+   {{!-- <h1 id="homeH1">{{appTitle}}</h1> --}}
+  <h2 class="animate__animated animate__lightSpeedInRight">Welcome to your Expense Tracker {{currentUser.username}}</h2>
    
     </div>
+    <a class="button-h " href="/main/expense/create" >
+      <h2 class="animate__animated animate__lightSpeedInRight">Create an expense?</h2>
+    </a>
+    <a class="button-h " href="/main">
+      <h2 class="animate__animated animate__lightSpeedInLeft">Check on your records?</h2>
+    </a>
   </body>
 </html>

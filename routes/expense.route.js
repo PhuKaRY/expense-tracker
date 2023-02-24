@@ -11,7 +11,7 @@ router.get("/expense/create", async (req, res, next) => {
   res.render("expense-create", { tags });
 });
 
-router.post("/expense/create", async (req, res, next) => {
+router.post("/expense/create", isOwnerOfExpense, async (req, res, next) => {
   const { date, price, category, tag } = req.body;
   try {
     await Expense.create({
@@ -111,11 +111,5 @@ router.post("/expense", async (req, res, next) => {
     next(error);
   }
 });
-// router.get("/filter/tag", async (req, res, next) => {
-//   try {
-//     res.render("tag", { title: "Party" });
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+
 module.exports = router;
